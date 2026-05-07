@@ -15,7 +15,8 @@ on:
 jobs:
   codeql:
     name: Codeql
-    uses: nasa/cFS/.github/workflows/codeql-reusable.yml@main
+    uses: arielswalker/cFS/.github/workflows/codeql-reusable.yml@test-cfs/workflows136
     with:
       component-path: psp
-      make: 'make -C build/native/default_cpu1/psp'
+      prep: 'make prep'
+      make: 'ls -a; pwd; make -C build/native/default_cpu1/psp'
