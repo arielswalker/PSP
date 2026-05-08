@@ -2,14 +2,14 @@ name: "CodeQL Analysis"
 
 on:
   push:
-    branches:
-      - dev
-      - main
-  pull_request:
-    types:
-      - opened
-      - reopened
-      - synchronize
+  #  branches:
+  #    - dev
+  #    - main
+  #pull_request:
+  #  types:
+  #    - opened
+  #    - reopened
+  #    - synchronize
   workflow_dispatch:
 
 jobs:
@@ -18,5 +18,5 @@ jobs:
     uses: arielswalker/cFS/.github/workflows/codeql-reusable.yml@test-cfs/workflows136
     with:
       component-path: psp
-      prep: 'make prep'
-      make: 'ls -a; pwd; make -C build/native/default_cpu1/psp'
+      prep: 'make native_std.prep'
+      make: 'make -C build-native_std/native/default_cpu1/psp'
